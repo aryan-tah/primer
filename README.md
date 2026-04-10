@@ -44,15 +44,11 @@ And Primer does something none of those tools do: it asks *you* what your app is
 ## Install
 
 ```bash
-claude plugin add primer
-```
-
-Or install from source:
-
-```bash
 git clone https://github.com/aryantah/primer.git
-claude plugin add ./primer
+claude --plugin-dir ./primer
 ```
+
+Or if you want it available in every session, add it to your Claude Code settings.
 
 ## Usage
 

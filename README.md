@@ -1,10 +1,10 @@
 # Primer
 
-**Claude Code reads your entire project every time you start a session. On the Pro plan, that eats your quota fast. Primer fixes that.**
+**50,000 tokens before you even ask a question.** That's what Claude Code burns just reading your project at the start of every session. On the Pro plan, that's your quota disappearing on orientation, not actual work.
 
-Most people building with Claude Code don't even know they're wasting tokens. Every session, Claude blindly reads 5-15 files trying to figure out where things are and what your app does. It does this from scratch, every single time. And after all that reading, it still sometimes misunderstands your project.
+Most people building with Claude Code don't even know this is happening. Every session, Claude blindly reads your entire project trying to figure out where things are and what your app does. It does this from scratch, every single time. And after burning through all those tokens, it still sometimes misunderstands your project.
 
-Primer replaces that with a one-time setup: you describe your app, Primer maps your files, and from then on Claude navigates with purpose instead of exploring blindly. ~300 tokens instead of thousands. Every session. Forever.
+Primer replaces that with a one-time setup: you describe your app, Primer maps your files, and from then on Claude navigates with purpose instead of exploring blindly. ~300 tokens instead of tens of thousands. Every session. Forever.
 
 ## How It Works
 
@@ -53,6 +53,24 @@ Or install from source:
 git clone https://github.com/aryantah/primer.git
 claude plugin add ./primer
 ```
+
+## Usage
+
+**First time (one-time setup, ~5 minutes):**
+
+1. Open your project in Claude Code like you normally would
+2. Primer will automatically ask you to describe your app — just answer in plain English, no technical knowledge needed
+3. After that, it walks through your project folder by folder and shows you a one-line description for each file
+4. You say "looks good" or correct anything that seems off
+5. Once you've reviewed everything, Primer saves two small files (`APP_INTENT.md` and `CODE_MAP.md`) to your project — commit these to git
+
+**Every session after (automatic):**
+
+You don't do anything. Primer runs in the background:
+- If your code changed since last session, it shows you just the updated file descriptions for a quick review
+- Then Claude uses the map to navigate your project directly instead of reading everything from scratch
+
+That's it. No commands to remember, no config to maintain.
 
 ## What Gets Created
 

@@ -62,6 +62,7 @@ git ls-files --others --exclude-standard
 Combine all three lists and deduplicate. This catches every possible change — whether someone coded for a week and committed everything, coded and forgot to commit, or just created new files.
 
 Filter out:
+- `APP_INTENT.md` and `CODE_MAP.md` themselves — Primer's own files, not project code
 - Files in gitignored directories (already handled by `--exclude-standard`)
 - Generated files (lock files, build output)
 - Files that aren't in the map's scope (if the user chose a partial scan)

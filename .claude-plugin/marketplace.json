@@ -1,0 +1,18 @@
+{
+  "name": "primer-dev",
+  "description": "Development marketplace for Primer codebase navigation plugin",
+  "owner": {
+    "name": "Aryan Tah"
+  },
+  "plugins": [
+    {
+      "name": "primer",
+      "description": "Stop paying for Claude to rediscover your codebase every session. Maps it once, you review it, Claude uses it forever.",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "Aryan Tah"
+      }
+    }
+  ]
+}

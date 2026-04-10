@@ -1,0 +1,18 @@
+{
+  "name": "primer",
+  "description": "Stop paying for Claude to rediscover your codebase every session. Maps it once, you review it, Claude uses it forever.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Aryan Tah"
+  },
+  "homepage": "https://github.com/aryantah/primer",
+  "repository": "https://github.com/aryantah/primer",
+  "license": "MIT",
+  "keywords": [
+    "token-efficiency",
+    "code-map",
+    "project-navigation",
+    "codebase-index",
+    "pro-plan"
+  ]
+}

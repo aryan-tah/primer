@@ -54,11 +54,11 @@ Or if you want it available in every session, add it to your Claude Code setting
 
 **First time (one-time setup, ~5 minutes):**
 
-1. Open your project in Claude Code like you normally would
-2. Primer will automatically ask you to describe your app — just answer in plain English, no technical knowledge needed
+1. Open your project in Claude Code and type `/primer:enable`
+2. Primer will ask you to describe your app — just answer in plain English, no technical knowledge needed
 3. After that, it walks through your project folder by folder and shows you a one-line description for each file
 4. You say "looks good" or correct anything that seems off
-5. Once you've reviewed everything, Primer saves two small files (`APP_INTENT.md` and `CODE_MAP.md`) to your project — commit these to git
+5. Once you've reviewed everything, Primer saves a few small files to your project — commit them to git
 
 **Every session after (automatic):**
 
@@ -68,23 +68,28 @@ You don't do anything. Primer runs in the background:
 
 That's it. No commands to remember, no config to maintain.
 
+**Want to turn it off?** Type `/primer:disable`. Your map files stay intact — re-enable anytime without redoing the setup.
+
 ## What Gets Created
 
 Primer creates two files in your project root:
 
 | File | What It Is | Who Writes It |
 |------|-----------|---------------|
+| `.primer` | Marker file that tells Primer to activate | Created by `primer:enable` |
 | `APP_INTENT.md` | What your app does, who it's for, key flows | You, through conversation |
 | `CODE_MAP.md` | Annotated file tree with one-liner per file | Primer generates, you review |
 
-Both are small, readable markdown. Commit them to your repo so they persist across machines and teammates.
+All are small, readable files. Commit them to your repo so they persist across machines and teammates.
 
 ## The Skills
 
-Primer is built as four composable skills that work together:
+Primer is built as six composable skills that work together:
 
 | Skill | What It Does | When It Runs |
 |-------|-------------|--------------|
+| `enable` | Turns on Primer for this project | Once, when you want to use Primer |
+| `disable` | Turns off Primer without deleting your map | When you want Primer to stop |
 | `app-onboarding` | Asks you to describe your app in your own words | Once, on first use |
 | `project-scanner` | Walks through your project folder by folder with you | Once, after onboarding |
 | `map-updater` | Checks git for changes, updates only what changed | Each session start |
